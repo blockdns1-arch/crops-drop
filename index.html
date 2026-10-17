@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Drop - censorship-resistant, private, self-expiring messages on Arkiv</title>
+    <meta
+      name="description"
+      content="Encrypted client-side, stored on Arkiv, readable only by whoever holds the link, and gone at expiry. No server, no account, no logs."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Drop</h1>
+        <p class="tagline">
+          A censorship-resistant, private, self-expiring message. Encrypted in your browser, stored on
+          <strong>Arkiv</strong>, readable only by whoever holds the link, gone at expiry. No server, no account.
+        </p>
+      </header>
+
+      <nav class="tabs">
+        <button id="createTab" class="tab">Create a drop</button>
+        <button id="readTab" class="tab">Open a drop</button>
+      </nav>
+
+      <section id="createPanel">
+        <label for="message">Secret message</label>
+        <textarea id="message" rows="5" placeholder="Type something only the link holder should read..."></textarea>
+
+        <label for="hours">Self-destructs after</label>
+        <select id="hours">
+          <option value="1">1 hour</option>
+          <option value="6">6 hours</option>
+          <option value="24" selected>24 hours</option>
+          <option value="168">7 days</option>
+          <option value="720">30 days</option>
+        </select>
+
+        <button id="createBtn" class="primary">Encrypt &amp; store on Arkiv</button>
+        <p id="createStatus" class="status"></p>
+        <div id="result"></div>
+
+        <details class="hint">
+          <summary>How it works</summary>
+          <ul>
+            <li>Your message is encrypted with AES-256-GCM <em>in your browser</em> before it leaves the page.</li>
+            <li>Only the ciphertext and a few indexed attributes are stored as an Arkiv entity. No plaintext, ever.</li>
+            <li>The decryption key lives in the <code>#</code> fragment of the link, which browsers never send to a server.</li>
+            <li>The entity expires automatically at the block you chose - nothing to delete, nothing to leak.</li>
+          </ul>
+        </details>
+      </section>
+
+      <section id="readPanel" hidden>
+        <label for="entityKey">Entity key</label>
+        <input id="entityKey" placeholder="0x..." />
+        <label for="keyField">Decryption key</label>
+        <input id="keyField" placeholder="from the link after #k=" />
+        <button id="readBtn" class="primary">Unlock</button>
+        <p id="readStatus" class="status"></p>
+        <div id="readResult"></div>
+      </section>
+
+      <footer>
+        <p class="muted">
+          Built on <a href="https://arkiv.network">Arkiv</a>, the Web3 database. Track: Privacy (CROPS).
+        </p>
+      </footer>
+    </main>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

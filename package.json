@@ -1,0 +1,21 @@
+{
+  "name": "crops-drop",
+  "version": "1.0.0",
+  "description": "Encrypted, self-expiring drops on Arkiv (the Web3 database). Privacy + censorship resistance, no server.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "new-wallet": "node scripts/new-wallet.mjs",
+    "create": "node scripts/create.mjs",
+    "read": "node scripts/read.mjs",
+    "list": "node scripts/list.mjs",
+    "serve": "node scripts/serve.mjs"
+  },
+  "dependencies": {
+    "@arkiv-network/sdk": "^0.8.1",
+    "viem": "^2.0.0"
+  }
+}
