@@ -9,6 +9,9 @@ no database operator that can read the message, censor it, or be forced to hand 
 - Track: **Privacy** (CROPS) - and it also serves censorship resistance.
 - Network: Arkiv **Tiramisu** testnet (chain id `7738577`).
 - Live app: **https://blockdns1-arch.github.io/crops-drop/**
+- Demo drop already on Tiramisu:
+  **[open a live drop](https://blockdns1-arch.github.io/crops-drop/#e=0x9ccec8c296038661446b043d9dcbc2492cc3bdd73f910ee5a1ac39d7374de33a&k=4yH6uLv_vZW03bc8I5y1wNqqR9rZ-XSsGxDTh7PfORg)**
+  (entity `0x9ccec8c2...4de33a`, created by `0x953BaA88...E45323`, expires 24h after creation)
 
 ## Why Arkiv
 
