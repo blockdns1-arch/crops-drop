@@ -8,7 +8,7 @@ no database operator that can read the message, censor it, or be forced to hand 
 
 - Track: **Privacy** (CROPS) - and it also serves censorship resistance.
 - Network: Arkiv **Tiramisu** testnet (chain id `7738577`).
-- Live app: **https://drop-crops.vercel.app** *(placeholder - replaced after deploy)*
+- Live app: **https://blockdns1-arch.github.io/crops-drop/**
 
 ## Why Arkiv
 
